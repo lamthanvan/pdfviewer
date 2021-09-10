@@ -1,6 +1,6 @@
 <template>
 <div>
-  <iframe height="100%" width=100% :src="`${getFilePath}`" ></iframe>
+  <iframe height="100%" width=100% :src="`${getFilePath}`" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="main_iframe"></iframe>
 </div>
 </template>
 
@@ -18,13 +18,17 @@ export default {
       }
       return this.path 
     }
-  }
+  },
 }
 </script>
 <style scoped>
-div {
-  width: 50%;
-  height: 79vh;
-  min-width: 400px;
+  div{
+    height: 100%;
+    width: 100%;
+  }
+iframe{
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
 }
 </style>

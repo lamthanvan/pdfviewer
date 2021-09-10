@@ -2017,7 +2017,7 @@ var PDFViewerApplication = {
 exports.PDFViewerApplication = PDFViewerApplication;
 var validateFileURL;
 {
-  var HOSTED_VIEWER_ORIGINS = ["null", "http://mozilla.github.io", "https://mozilla.github.io"];
+  var HOSTED_VIEWER_ORIGINS = ["null","http://localhost:8080","http://file-examples-com.github.io","https://file-examples-com.github.io", "http://mozilla.github.io", "https://mozilla.github.io"];
 
   validateFileURL = function validateFileURL(file) {
     if (file === undefined) {
