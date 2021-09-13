@@ -14490,7 +14490,7 @@ function getDefaultPreferences() {
       "spreadModeOnLoad": -1,
       "textLayerMode": 1,
       "useOnlyCssZoom": false,
-      "viewOnLoad": 0,
+      "viewOnLoad": 1,
       "disableAutoFetch": false,
       "disableFontFace": false,
       "disableRange": false,
