@@ -1,7 +1,16 @@
 <template>
   <div id="app">
+  {{name}}
+    <ul>
+      <li v-for="(file, index) in files" :key="index" @click="setName(index)">{{file}}</li>
+    </ul>
+    <PDFJSThumbnail
+            :path="`${thumbPath}`"
+            :fileName="`${name}`"
+    />
     <button v-on:click="showPdf()" v-if="!pdfShow">show pdf</button>
-    <template v-if="pdfShow">
+
+    <template v-if="!pdfShow">
     <div class="control-panel">
       <div class="el-image-viewer__btn el-image-viewer__actions visible">
         <div class="el-image-viewer__actions__inner">         
@@ -35,26 +44,32 @@
 
 <script>
 import PDFJSViewer from "./components/PDFJSViewer";
+import PDFJSThumbnail from "./components/PDFJSThumbnail";
 
 export default {
   name: "app",
   components: {
     PDFJSViewer,
+    PDFJSThumbnail
   },
   data() {
     return {
       pageIndex: 1,
       totalPages: 1,
       path: "lib/web/viewer.html", //path of the PDF.js viewer.html
+      thumbPath: "lib/web/thumbnail.html",
       files: [        
-        "demo.pdf",
-        "100mb.pdf",
-        "https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_1MB.pdf",        
+        "SO-41B_J_syousai_11.pdf",
+        "medium.pdf",
         "https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_500_kB.pdf",
+        "https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_1MB.pdf",
       ],
       index: 0,
       pdfShow: false
     };
+  },
+  created() {
+    this.pageIndex = 0
   },
   computed: {
     name() {
@@ -65,6 +80,9 @@ export default {
     }    
   },
   methods: {
+    setName(index){
+      this.index =  index
+    },
     showPdf(){
       this.pdfShow = true
     },
@@ -72,13 +90,12 @@ export default {
       this.pdfShow = false
     },
     initValue(){
-      this.pageIndex = 1,
+      this.pageIndex = 0
       this.totalPages = 1
     },
     nextFile() {
       this.initValue();
       this.index++;
-      console.log(this.files.length);
       if (this.index > this.files.length - 1) this.index = 0;
     },
     setPage(){
@@ -103,20 +120,20 @@ export default {
       this.pdfFrame.document.getElementById("zoomOut").click();
     },
     pageUp(){
-      if(this.pageIndex <= 1 ){
-        if(this.pageIndex === 0) this.pageIndex = 1;
-        return;
-      }
-      this.pageIndex--;
-      this.setPage()
+      // if(this.pageIndex <= 1 ){
+      //   if(this.pageIndex === 0) this.pageIndex = 1;
+      //   return;
+      // }
+      this.pdfFrame.document.getElementById("previous").click();
+      // this.setPage()
     },
     pageDown(){
-      if(this.pageIndex >= this.totalPages){
-        this.pageIndex = this.totalPages
-        return;
-      }
-      this.pageIndex++;
-      this.setPage()
+      // if(this.pageIndex >= this.totalPages){
+      //   this.pageIndex = this.totalPages
+      //   return;
+      // }
+      this.pdfFrame.document.getElementById("next").click();
+      // this.setPage()
     }
   },
 };

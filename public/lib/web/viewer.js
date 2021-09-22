@@ -14484,10 +14484,10 @@ function getDefaultPreferences() {
   if (!defaultPreferences) {
     defaultPreferences = Promise.resolve({
       "cursorToolOnLoad": 0,
-      "defaultZoomValue": "",
-      "disablePageLabels": false,
+      "defaultZoomValue": "page-fit",
+      "disablePageLabels": true,
       "enablePrintAutoRotate": false,
-      "enableWebGL": false,
+      "enableWebGL": true,
       "eventBusDispatchToDOM": false,
       "externalLinkTarget": 0,
       "historyUpdateUrl": false,
@@ -14495,7 +14495,7 @@ function getDefaultPreferences() {
       "pdfBugEnabled": false,
       "renderer": "canvas",
       "renderInteractiveForms": false,
-      "sidebarViewOnLoad": -1,
+      "sidebarViewOnLoad": 0,
       "scrollModeOnLoad": -1,
       "spreadModeOnLoad": -1,
       "textLayerMode": 1,

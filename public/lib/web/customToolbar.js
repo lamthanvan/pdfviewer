@@ -27,7 +27,7 @@ let sheet = (function() {
     addElemFromSecondaryToPrimary('next', 'toolbarViewerMiddle')
   
     //adding elements to right part of toolbar
-    addElemFromSecondaryToPrimary('secondaryOpenFile', 'toolbarViewerRight')
+    // addElemFromSecondaryToPrimary('secondaryOpenFile', 'toolbarViewerRight')
   
     /* Changing icons */
     // changeIcon('previous', 'icons/baseline-navigate_before-24px.svg')

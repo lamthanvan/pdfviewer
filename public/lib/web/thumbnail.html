@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        PDF Thumbnails
+    </title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="html5shiv.js"></script>
+    <script src="respond.min.js"></script>
+    <![endif]-->
+    <!-- PDF.js and Simple PDF Thumbnail scripts -->
+
+    <style>
+        html{
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Page Content -->
+<div class="container" id="maincontent">
+    <img data-pdf-thumbnail-file="https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_500_kB.pdf" data-pdf-thumbnail-width="200" width="200" src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
+</div>
+<!-- /.container -->
+<script src="../build/pdfThumbnails.js" data-pdfjs-src="../build/pdf.js"></script>
+</body>
+</html>
