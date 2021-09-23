@@ -1,6 +1,6 @@
 <template>
 	<div>
-<!--		<iframe height="300" width=100% :src="`${getFilePath}`" oncontextmenu="return false;"></iframe>-->
+		<iframe height="300" width=100% :src="`${getFilePath}`" oncontextmenu="return false;"></iframe>
 	</div>
 </template>
 <script>

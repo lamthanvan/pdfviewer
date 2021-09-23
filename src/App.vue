@@ -10,7 +10,7 @@
     />
     <button v-on:click="showPdf()" v-if="!pdfShow">show pdf</button>
 
-    <template v-if="!pdfShow">
+    <template v-if="pdfShow">
     <div class="control-panel">
       <div class="el-image-viewer__btn el-image-viewer__actions visible">
         <div class="el-image-viewer__actions__inner">         
